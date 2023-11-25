@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <!-- content -->
+    <!-- content start -->
     <h3 class="text-center">All Students Roll No.Slip</h3>
     <!-- <q-btn no-caps label="Generate center" class="bg-green q-ml-lg" @click="genratecenter()"/> -->
     <q-table class="q-mt-lg" flat bordered title="Center Table" :rows="students" :columns="abdullah" color="primary" row-key="id" :loading="loading" />
