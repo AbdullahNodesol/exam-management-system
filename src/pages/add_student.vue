@@ -4,9 +4,11 @@
       <div class="col-8">
         <div class="text-center text-bold size">Add  Student</div>
     <div class="row q-ml-md q-mt-lg">
-      <q-input filled class="col-9" label="Student Name" v-model="student.name" />
-      <div class="q-ml-xl">
-        <div class="q-pl-md text-bold">Please select Gender</div>
+      <div class="col-10">
+      <q-input filled label="Student Name" v-model="student.name" />
+    </div>
+      <div class="q-mt-md">
+        <div class=" text-bold">Please select Gender</div>
         <q-radio v-model="student.gender" val="Male" label="Male" />
         <q-radio v-model="student.gender" val="Female" label="Female"/>
       </div>
@@ -41,8 +43,13 @@ export default {
   methods:{
     ...mapActions(useCenterStore, ['addstudent']),
     add(data){
+    if(this.student.name!==''&& this.student.gender!==''){
       this.addstudent(data)
         this.$router.push("/allstudent");
+    }
+    else{
+      alert('asas')
+    }
     }
   }
   // name: 'PageName',

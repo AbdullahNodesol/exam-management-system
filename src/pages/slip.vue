@@ -11,7 +11,7 @@
     <div v-if="rollnoslip">
       <!-- Show the card if roll number is found -->
       <div class="row">
-        <q-card class="col-3 q-mt-md q-ml-xl">
+        <q-card class="col-sm-6 col-md-4 q-mt-md q-ml-xl">
           <q-card-section>
             <div style="font-size: 22px;" class="text-center">Roll NO Slip</div>
             <div><strong>Roll No:</strong> {{ rollnoslip.rollno }}</div>
@@ -19,7 +19,7 @@
             <div><strong>Gender:</strong> {{ rollnoslip.gender }}</div>
             <div><strong>Center:</strong> {{ rollnoslip.college }}</div>
             <div><strong>Address:</strong> {{ rollnoslip.address }}</div>
-            <q-btn flat class="bg-orange q-mt-sm" label="Print" />
+            <q-btn flat class="bg-orange q-mt-sm" label="Print"  onclick="window.print()" />
             <!-- Add other details as needed -->
           </q-card-section>
         </q-card>

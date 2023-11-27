@@ -10,7 +10,7 @@ const routes = [
      { path: 'allstudent', component: () => import('pages/all_student.vue') },
      { path: 'list', component: () => import('pages/rollno_list.vue') },
       { path: 'slip', component: () => import('pages/slip.vue') }
-    ]
+    ] 
   },
 
   // Always leave this as last one,

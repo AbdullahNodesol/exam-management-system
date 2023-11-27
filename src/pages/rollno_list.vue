@@ -26,8 +26,8 @@ export default {
     format: val => `${val}`,
     sortable: true
   },
-  { name: 'name', align: 'left', label: 'Student Name', field: 'name', },
-  { name: 'college', align: 'left', label: 'College', field: 'college', },
+  { name: 'name', align: 'left', label: 'Student Name', field:'name' },
+  { name: 'college', align: 'left', label: 'College', field:'college'},
   { name: 'gender', align: 'left', label: 'Gender', field: 'gender', },
   { name: 'rollno', align: 'left', label: 'Roll NO', field: 'rollno' },
   { name: 'address', align: 'left', label: 'Address', field: 'address' },
@@ -66,17 +66,18 @@ export default {
           for (let j = 1; j <= this.centers[c].room; j++) {
             //Start loop on seat of object  //
             for (let k = 1; k <= this.centers[c].seat; k++) {
-              this.students[seatCounter].college = this.centers[c].college;
-              console.log()
-              this.students[seatCounter].rollno = roll++;
-              this.students[seatCounter].counter = counter++;
-              this.students[seatCounter].address = `Floor ${i}
+
+
+              if (this.students[seatCounter] && seatCounter <= this.students.length) {
+                this.students[seatCounter].college = this.centers[c].college;
+
+                this.students[seatCounter].rollno = roll++;
+                this.students[seatCounter].counter = counter++;
+                this.students[seatCounter].address = `Floor ${i}
                    Room ${j}
                    Seat ${k}`;
-              if (seatCounter < this.students.length-1) {
-                seatCounter++;
+                   seatCounter++;
               }
-              return;
             }
             //End loop on seat of object  //
           }

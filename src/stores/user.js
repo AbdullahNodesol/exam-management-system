@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia'
+import { LocalStorage } from 'quasar';
 export const useCenterStore = defineStore('center', {
   state: () => ({
-     centers:[],
-     students:[],
+     centers:LocalStorage.getItem('array') ?? [],
+     students:LocalStorage.getItem('stude') ?? [],
   }),
   getters: {
     getUsers (state) {
@@ -11,10 +12,12 @@ export const useCenterStore = defineStore('center', {
   },
   actions: {
     addCenter(obj) {
-      this.centers.push({...obj});
+      this.centers.push(JSON.parse(JSON.stringify(obj)))
+      LocalStorage.set('array',this.centers)
     },
     addstudent(student){
-      this.students.push({...student})
+      this.students.push(JSON.parse(JSON.stringify(student)))
+      LocalStorage.set('stude',this.students)
     }
   }
 })
